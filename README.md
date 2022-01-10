@@ -136,13 +136,23 @@ _Figuur 4 - Uitgevoerde DataCamp cursussen_
 
 <br /><br />
 
-# TODO
-## Executed user stories
-Give list of executed user stories
-
 
 # Domain knowledge
+Voordat er machine learning models en neural networks ontwikkeld konden worden moest er eerst kennis opgedaan worden over het domein. Hiervoor heb ik literatuur onderzoek naar relevante onderzoeken en projecten die emoties classificeren uit audio. Verder kregen we ook documenten van onze product owner, zodat we ons konden inlezen op het domein en het Smart Teddy Bear project.
+<br /><br />
+
+## Introduction of the subject field
+De Smart Teddy is een therapeutisch partner die ouderen observeert doormiddel van sensoren in de Smart Teddy. De teddy bezit op het moment een aantal basis functionaliteiten zoals het observeren op het hoeveelheid aan plezier op een dag heeft en of ouderen genoeg laang genoeg slapen. Deze infromatie wordt dan in beeld gebracht in een dashboard voor verzorgers. Hiermee wordt er een schatting gemaakt over de Quality of Life van de ouder. Verzorgers kunnen met deze informatie sneller handelen en mogelijk de Quality of Life van een ouder verbeteren.
+
+![Smart Teddy dashboard](https://bigdata-thuas.eu/wp-content/uploads/2017/10/Screenshot-2021-04-10-at-23.32.41-300x161@2x.png)
+_Figuur 2 - Smart Teddy dashboard_
+
+<br />
+De product owner wilt voor de volgende prototype een aantal functionaliteiten toevoegen aan de teddy. Een van die functionaliteiten is het herkennen van emoties via spraak audio. Met behulp van deze functionaliteiten kan er in het dashboard aangegeven worden hoe vaak bepaalde emoties zijn geuit op een dag. Verzorgers die niet ter plekken zijn kunnen hierdoor een beeld de situatie krijgen zonder er fysiek bij te zijn. 
+<br /><br />
+
 ## Literature Research
+In dit hoofdstuk wordt er in kaart gebracht wat de resultaten waren van literatuur onderzoek.
 
 <details>
 <summary>Speech Emotion Detection using IoT based Deep Learning for Health Care
@@ -150,8 +160,55 @@ Give list of executed user stories
 
 Links: [IEEE](https://ieeexplore.ieee.org/abstract/document/9005638/authors#authors), [PDF](https://www.researchgate.net/profile/Sayed-Shah-6/publication/337992475_Speech_Emotion_Detection_using_IoT_based_Deep_Learning_for_Health_Care/links/5df968d392851c8364854a33/Speech-Emotion-Detection-using-IoT-based-Deep-Learning-for-Health-Care.pdf)
 
-</details>
+Deze research paper stelde een CNN als oplossing voor het classificeren van emoties. Voor het trainen van hun model maakten ze gebruik van de RAVDESS dataset. Verder beschreef deze paper duidelijk welke stappen er waren ondernomen en hoe iedere stap invloed had op de resultaten. Daarom adviseerde ik het team om ook deze paper door te nemen en het te gebruiken als baseline voor onze model en paper.
 
+<b>Data Augmentation</b>
+Deze paper maakte gebruik van 3 vormen van data augmentatie. Deze waren: Time Stretching, Pitch Shifiting en Dynamic Range Compression. Na het uitvoeren van data augemntatie verbeterde zij de resultaten van de CNN
+
+<b>Results</b>
+Hun uiteindelijke model resulteerde in 95% voor mannen en 97% voor vrouwen. Zij hebben kunnen aantonen dat het mogelijk is om emoties te kunnen herkennen uit spraak audio met hoge accuractie.
+
+<b>Conclusion</b>
+
+
+De researcher van de paper hebben hoge resultaten behaald, maar er kan echter niet gesproken worden van een model dat zulke resulatten zal krijgen bij realistisch auido.
+
+Het RAVDESS dataset wordt namelijk door profesionele acteuren en actresses in gesproken in een profesionele studio. Verder bestaat de ingesproken audio uit 2 verschillende zinnen. 
+
+---
+
+</details>
+<details>
+<summary>Audio feature extraction research
+</summary>
+
+[Source 1](https://medium.com/analytics-vidhya/understanding-the-mel-spectrogram-fca2afa2ce53),
+[Source 2](https://towardsdatascience.com/how-i-understood-what-features-to-consider-while-training-audio-files-eedfb6e9002b)
+
+</details>
+<br /><br />
+
+## Explanation of Terminology, jargon and definitions
+In dit hoofdstuk worden de gevonden en gebruikten terminologies, jargon en definities van het project uitgelegd.
+
+* Ambient noise -
+* Chromagram -
+* Convolutional Neural Network -
+* Mel-Frequency Cepstral Coefficients (MFCC's) -
+* Multilayer perceptron -
+* Spectrogram -
+* Threshold -
+* Transfer Learning -
+* Waveform -
+* Quality of Life
+* Zero-crossing rate -
+
+
+<br />
+
+# TODO
+## Executed user stories
+Give list of executed user stories
 ## Data preparation
 Tell about the handeling of data preparation
 

@@ -127,6 +127,40 @@ Voor de research paper heb ik de volgende delen met feedback en samenwerking van
 
 <br />
 
+# Predictive Analysis
+Voor het project heb ik een Multi Layer Perceptron (MLP) model van start tot eind gemaakt. Daarnaast heb ik ook gewerkt aan de Convolutional Neural Network (CNN) die wij als team hebben opgeleverd.
+<br /><br />
+
+## Multi Layer Perceptron (MLP)
+
+[MLP model notebook]()
+
+### Selecting a Model
+
+
+source: https://towardsdatascience.com/building-a-speech-emotion-recognizer-using-python-4c1c7c89d713
+
+
+### Configruing a Model
+
+### Evaluting a Model
+
+### Visualizing the outcome of a model
+
+<br /><br />
+
+## Convolutional Neural Network (CNN)
+### Selecting a Model
+
+### Configruing a Model
+
+### Evaluting a Model
+
+### Visualizing the outcome of a model
+
+<br /><br />
+
+
 # Datacamp
 Tijdens de minor heb ik de DataCamp cursussen die aangeboden werden gevolgd. Persoonlijk vond ik deze cursussen zeer leerzaam op het gebied van Data Science. Ik hiervoor geen idee hoe Data Science praktisch inelkaar zat en deze cursussen gaven hier een aardig goed beeld. Onderin in dit hoofdstuk heb ik een afebeelding toegevoegd met daarin de DataCamp cursussen die ik heb afgerond.
 
@@ -215,11 +249,4 @@ Tell about the handeling of data preparation
 ## Data collection
 Tell about data collection, which datasets where used and why
 
-## Created models
-Tell about the models I have created and explain why
 
-### Multi Layer Perceptron (MLP)
-Creation of MLP model for classification of emotions
-
-### Convolutional Neural Network (CNN)
-Creation of CNN for classification of objects 

@@ -39,6 +39,8 @@ zichtbaar gemaakt welke werkzaamheden in bepaalde sprint uitgevoerd werden.
 
 ![Miro timeline planning](https://gcdn.pbrd.co/images/id0k4ReDnCfR.jpg?o=1)
 _Figuur 1 - Miro timeline planning_
+
+---
 </details>
 <details>
 <summary>Github - SCRUM</summary>
@@ -49,6 +51,7 @@ I was responsible for the creation of the user stories.At the end of each sprint
 ![Sprint 8 backlog](https://gcdn.pbrd.co/images/zaFEIkf5La2M.png?o=1)
 _Figuur 2 - Sprint 8 backlog_
 
+---
 </details>
 <details><summary>Daily stand-up/ Retrospective</summary>
 <b>Daily standup</b><br />
@@ -58,6 +61,8 @@ In de daily standup, vertelde we wat voor werkzaamheden uitvoerd waren, knelpunt
 <b>Retrospective </b><br />
 
 Voor iedere retrospective is er een afbeelding geexpoteerd, zodat alle geschreven tickets en actiepunten terug gevonden kon worden. De afbeeldingen kunnen terug gevonden worden in de wiki pagina [Retrospective](https://github.com/koendebruijn/Emotions/wiki/Retrospective) in de [Emotions GitHub repositorie](https://github.com/koendebruijn/Emotions).  
+
+---
 </details>
 <br /><br />
 
@@ -67,12 +72,14 @@ Voor iedere retrospective is er een afbeelding geexpoteerd, zodat alle geschreve
 Het team had aan het begin van het project afgesproken om all communicatie over het project via Discord te doen. In Discord hadden we hiervoor een aparte discord server gemaakt voor alle project emo leden. Hierin werden relevanten documenten, websites en video tutorials met elkaar gedeeld. Verder werden hier ook de daily stand-ups, retrospectives, sprint planningen en andere meetings gehouden.
 <br /><br />
 Omdat het Smart Teddy Bear project uit drie verschillende projecten bestaat en ook te maken had met het clasificeren van audio. Hadden wij het initiatief genomen om een discord server op te zetten met daarin alle project groepen gerelateerd op het Smart Teddy Bear project. Hierin kon iedereen relevante research papers en resulten met elkaar delen.
-<br /><br />
+
+---
 </details>
 <details>
 <summary>Google Drive</summary>
 Om tegelijk met het team te werken aan documenten werd er gebruik gemaakt van Google Drive. Hierin maakten wij de presentaties voor de interne, externe en product owner meetings. 
-<br /><br />
+
+---
 </details>
 <br />
 
@@ -114,63 +121,6 @@ Voor de research paper heb ik de volgende delen met feedback en samenwerking van
 * Results
 <br /><br />
 
-# Reflection and Evaluation
-<details>
-<summary>Persoonlijke leerdoelen evaluatie</summary>
-</details>
-<details>
-<summary>Persoonlijke project bijdragen evaluatie</summary>
-</details>
-<details>
-<summary>Groeps evaluatie</summary>
-</details>
-
-<br />
-
-# Predictive Analysis
-Voor het project heb ik een Multi Layer Perceptron (MLP) model van start tot eind gemaakt. Daarnaast heb ik ook gewerkt aan de Convolutional Neural Network (CNN) die wij als team hebben opgeleverd.
-<br /><br />
-
-## Multi Layer Perceptron (MLP)
-
-[MLP model notebook]()
-
-### Selecting a Model
-
-
-source: https://towardsdatascience.com/building-a-speech-emotion-recognizer-using-python-4c1c7c89d713
-
-
-### Configruing a Model
-
-### Evaluting a Model
-
-### Visualizing the outcome of a model
-
-<br /><br />
-
-## Convolutional Neural Network (CNN)
-### Selecting a Model
-
-### Configruing a Model
-
-### Evaluting a Model
-
-### Visualizing the outcome of a model
-
-<br /><br />
-
-
-# Datacamp
-Tijdens de minor heb ik de DataCamp cursussen die aangeboden werden gevolgd. Persoonlijk vond ik deze cursussen zeer leerzaam op het gebied van Data Science. Ik hiervoor geen idee hoe Data Science praktisch inelkaar zat en deze cursussen gaven hier een aardig goed beeld. Onderin in dit hoofdstuk heb ik een afebeelding toegevoegd met daarin de DataCamp cursussen die ik heb afgerond.
-
-![Uitgevoerde DataCamp cursussen](https://gcdn.pbrd.co/images/E7pkfRINI68j.png?o=1)
-_Figuur 4 - Uitgevoerde DataCamp cursussen_
-
-
-<br /><br />
-
-
 # Domain knowledge
 Voordat er machine learning models en neural networks ontwikkeld konden worden moest er eerst kennis opgedaan worden over het domein. Hiervoor heb ik literatuur onderzoek naar relevante onderzoeken en projecten die emoties classificeren uit audio. Verder kregen we ook documenten van onze product owner, zodat we ons konden inlezen op het domein en het Smart Teddy Bear project.
 <br /><br />
@@ -178,7 +128,7 @@ Voordat er machine learning models en neural networks ontwikkeld konden worden m
 ## Introduction of the subject field
 De Smart Teddy is een therapeutisch partner die ouderen observeert doormiddel van sensoren in de Smart Teddy. De teddy bezit op het moment een aantal basis functionaliteiten zoals het observeren op het hoeveelheid aan plezier op een dag heeft en of ouderen genoeg laang genoeg slapen. Deze infromatie wordt dan in beeld gebracht in een dashboard voor verzorgers. Hiermee wordt er een schatting gemaakt over de Quality of Life van de ouder. Verzorgers kunnen met deze informatie sneller handelen en mogelijk de Quality of Life van een ouder verbeteren.
 
-![Smart Teddy dashboard](https://bigdata-thuas.eu/wp-content/uploads/2017/10/Screenshot-2021-04-10-at-23.32.41-300x161@2x.png)
+![Smart Teddy dashboard](https://bigdata-thuas.eu/wp-content/uploads/2017/10/Screenshot-2021-04-10-at-23.32.41-300x161@2x.png)<br />
 _Figuur 2 - Smart Teddy dashboard_
 
 <br />
@@ -240,13 +190,122 @@ In dit hoofdstuk worden de gevonden en gebruikten terminologies, jargon en defin
 
 <br />
 
-# TODO
-## Executed user stories
-Give list of executed user stories
-## Data preparation
-Tell about the handeling of data preparation
+# Created models
+Voor het project heb ik een Multi Layer Perceptron (MLP) model van start tot eind gemaakt. Daarnaast heb ik ook gewerkt aan de Convolutional Neural Network (CNN) die wij als team hebben opgeleverd.
+<br /><br />
 
-## Data collection
-Tell about data collection, which datasets where used and why
+## Multi Layer Perceptron (MLP)
+
+[MLP model notebook]()
+
+### Data Preprocessing
+<details>
+<summary>Data exploration</summary>
+Ik heb voor het model geen taken uitgevoerd dat betrekking had op data exploration. Deze taken waren uitgevoerd door Jaap. Hij had voor de data exploration visualisaties gemaakt van de audio samples die vertaald werden naar waveforms, de balance van de verschillende emoties, de duratie van audio samples en de balance tussen man en vrouw audio samples.
+
+---
+</details>
+
+<details>
+<summary>Data cleansing</summary>
+
+</details>
+
+<details>
+<summary>Data explanation</summary>
+</details>
+
+<details>
+<summary>Data visualization (exploratory)</summary>
+</details>
+
+<br />
+
+### Predictive Analysis
+
+<details>
+<summary>Selecting a Model</summary>
+source: https://towardsdatascience.com/building-a-speech-emotion-recognizer-using-python-4c1c7c89d713
+
+</details>
+
+<details>
+<summary>Configuring a Model</summary>
+</details>
+
+<details>
+<summary>Evaluating a Model</summary>
+</details>
+
+<details>
+<summary>Visualizing the outcome of a model</summary>
+</details>
+
+<br />
+
+---
+
+## Convolutional Neural Network (CNN)
+### Data Preprocessing
+<details>
+<summary>Data exploration</summary>
+</details>
+
+<details>
+<summary>Data cleansing</summary>
+</details>
+
+<details>
+<summary>Data explanation</summary>
+</details>
+
+<details>
+<summary>Data visualization (exploratory)</summary>
+</details>
+
+<br />
+
+### Predictive Analysis
+
+<details>
+<summary>Selecting a Model</summary>
+source: https://towardsdatascience.com/building-a-speech-emotion-recognizer-using-python-4c1c7c89d713
+
+</details>
+
+<details>
+<summary>Configuring a Model</summary>
+</details>
+
+<details>
+<summary>Evaluating a Model</summary>
+</details>
+
+<details>
+<summary>Visualizing the outcome of a model</summary>
+</details>
 
 
+<br />
+
+# Reflection and Evaluation
+<details>
+<summary>Persoonlijke leerdoelen evaluatie</summary>
+</details>
+<details>
+<summary>Persoonlijke project bijdragen evaluatie</summary>
+</details>
+<details>
+<summary>Groeps evaluatie</summary>
+</details>
+
+<br />
+
+# Datacamp
+Tijdens de minor heb ik de DataCamp cursussen die aangeboden werden gevolgd. Persoonlijk vond ik deze cursussen zeer leerzaam op het gebied van Data Science. Ik hiervoor geen idee hoe Data Science praktisch inelkaar zat en deze cursussen gaven hier een aardig goed beeld. Onderin in dit hoofdstuk heb ik een afebeelding toegevoegd met daarin de DataCamp cursussen die ik heb afgerond.
+
+![Uitgevoerde DataCamp cursussen](https://gcdn.pbrd.co/images/E7pkfRINI68j.png?o=1)
+_Figuur 4 - Uitgevoerde DataCamp cursussen_
+
+
+<br /><br />

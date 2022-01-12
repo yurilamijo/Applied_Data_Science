@@ -517,6 +517,26 @@ Ik ben tevreden op de manier dat ik de scrum master rol heb kunnen voldoen voor 
 </details>
 <details>
 <summary>Groeps evaluatie</summary>
+<b>Situatie</b><br />
+Het projectgroep bestond in totaal uit 6 project leden. Vier projectleden studeren software engineering, één projectlid studeert bestuurskunden en één projectlid studeert bedrijfskunde. Iedereen binnen de groep had geen ervaring op het gebied van data science. De projectliden van bedrijfskunde en bestuurskunden hadden ook geen ervaring op het gebied van SCRUM en programmeren. Verder was iedereen in het project groep gemotiveerd om de minor te kunnen voltooien en daarbij over data science te kunnen leren.
+
+<b>Taak</b><br />
+Als projectgroep hadden wij de Emotions project van Hani Al-Ers onder ons genomen. Het eind goal van dit project was het kunnen opleveren van een ML model of een neural network die verschillende emoties kan herkennen. De resultaten die we daarvan hebben behaald wordt dan in een research paper opgenomen. 
+<br />
+
+Verder had iedereen in de groep ook zijn eigen taken. Zo had ik hiervoor al verteld dat ik de scrum master was en dat ik verantwoordelijk was voor het organiseren van de daily stand-ups, wekelijkse refinements, sprint planning en retrospectives. Een andere student was toevallig een docent op De Haagse Hogeschool. Hij nam opzich de taak op om de afspraken te beheren tussen de verschillende docenten. Verder had iedereen ook hun eigen taken die in de user stories zijn beschreven.
+
+<b>Actie</b><br />
+Als team besproken we altijd met elkaar wie welke taken opzich nam. Op bepaalde momenten kwam het wel eens voor dat meerdere projectleden of zelf iedereen bezig was met dezelfde userstories. Een voorbeeld hiervan is, dat iedereen aan het begin van het project bezig was met literatuur onderzoek of dat iedereen bezig was met de research paper. Maar bij de momenten waarvan dit niet zo was, was iedereen zelfstanding aan het werk met hun eigen user storie. Verder deden we ook aan pair programming. Zo konden we elkaar ondersteunen als iemand er niet uitkwam. 
+
+Tijdens het project kwamen we ook tegen problemen aan. Op het moment dat we tegen problemen aankwamen waardoor bepaalde werkzaamheden stop gezet moest worden bespraken we altijd gelijk met elkaar. Als wij er dan niet uitkwamen vroegen we hulp en advies van de docenten.
+
+<b>Resultaat</b><br />
+Doordat iedereen gemotiveerd en vastberaden was om de minor en het project te voltooien hebben wij als project team veel kunnen bereiken. Aan het begin van de minor wisten we niet hoe we een ML model of een neural network moesten opzetten en of het project doel van de product owner haalbaar was. Maar door alle harde werk en communicatie met elkaar hebben we een CNN kunnen opleveren die emoties kan herkennen.
+
+<b>Reflectie</b><br />
+Ik kan met plezier en een goed gevoel deze minor afsluiten. We hebben als team en als individu veel kunnen bereiken met elkaar en op eigen kracht. Iedereen was positief ingesteld, transparant en behulpzaam. Verder hebben we ook een CNN kunnen opleveren met aardig goeie resulaten. Maar dit model kan zeker nog verbeterd worden. We hebben als team niet de hyperparameters kunnen tunnen en verder kunnen bouwen op onze CNN die nu alleen gebruik maakt van de DensNet model als baseline.
+
 </details>
 
 <br />

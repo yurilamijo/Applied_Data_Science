@@ -467,7 +467,7 @@ Gedurende project ben ik niet bezig geweest met het visualiseren van de datasets
 <summary>Persoonlijke leerdoelen evaluatie</summary>
 
 <b>Situatie</b><br />
-De Smart Teddy Project was het eerste project dat betrekking had op data science. Het project bestond uit 6 project leden. Hiervan kwam er een project lid kwam van bestuurskunden, een van bedrijfskunden en 4 software engineering. Als Software Engineering student was ik erg enthousiast over de minor. Ik had voor de minor al veel gelezen de resultaten en potentie van data science. Alleen wist ik niet waar ik zou moeten beginnen met het leren van het vakgebied. Hierom had ik ervoor gekozen om de minor Apllied Data Science te volgen. Zodat ik opzet en het proces van data science zou kunnen begrijpen en om deze in de praktijk te beoefenen. 
+Als Software Engineering student was ik erg enthousiast over de minor. Ik had voor de minor al veel gelezen de resultaten en potentie van data science. Alleen wist ik niet waar ik zou moeten beginnen met het leren van het vakgebied. Hierom had ik ervoor gekozen om de minor Apllied Data Science te volgen. Zodat ik opzet en het proces van data science zou kunnen begrijpen en om deze in de praktijk te beoefenen. 
 
 <b>Taak</b><br />
 Voor de minor had ik een aantal leerdoelen voor mezelf opgesteld die ik aan het eind van de minor wilde beheersen. De leerdoelen die ik voor mezelf opgesteld had zijn de volgende:
@@ -487,9 +487,7 @@ Om te leren hoe ik een machine learning model en/of een neural network kan train
 Om te leren hoe ik data van getrainde models kan visualiseren wilde ik de lecture van Tony Andioli over data visualizatie bijwonen. De kennis die ik bij deze lecture dan heb opgenomen wilde ik kan toepassen op het project.
 
 <b>Resultaat</b><br />
-Tijdens de minor heb ik me best gedaan om mijn opgestelde leerdoel te behalen.
-
-Tijdens de minor heb ik kennis opgedaan over welke vormen van ML models en neural networks er zijn. Deze kennis heb ik opgedaan door het volgen van de Datacamp cursussen en de lectures van de minor. Verder heb ik meerder ML models kunnen trainen in Datacamp en eigen test project. Zo heb ik een SVM  model gemaakt in Datacamp en een MLP model voor het project. De resultaten die daaruit kwamen heb ik daarna kunnen visualiseren.
+Tijdens de minor heb ik me best gedaan om mijn opgestelde leerdoel te behalen. Zo heb ik tijdens de minor kennis opgedaan over welke vormen van ML models en neural networks er zijn. Deze kennis heb ik opgedaan door het volgen van de Datacamp cursussen en de lectures van de minor. Verder heb ik meerder ML models kunnen trainen in Datacamp en eigen test project. Zo heb ik een SVM  model gemaakt in Datacamp en een MLP model voor het project. De resultaten die daaruit kwamen heb ik daarna kunnen visualiseren.
 
 Door het bijwonen van de lectures en het voltooien van de Datacamp cursussen heb ik kunnen zien het proces van data science in elkaar zit en waarom het proces zo is.
 
@@ -499,6 +497,23 @@ Ik ben tevreden met resultaten die ik heb kunnen behalen. Ik heb de leerdoelen d
 </details>
 <details>
 <summary>Persoonlijke project bijdragen evaluatie</summary>
+<b>Situatie</b><br />
+De Smart Teddy Project was het eerste project dat betrekking had op data science. Het project bestond uit 6 project leden. Hiervan kwam er een project lid kwam van bestuurskunden, een van bedrijfskunden en 4 software engineering. Omdat ik als software engineering student al ervaring had met programmeren zou het programmeren van een ML model of een neural network niet all te moeilijk zijn kwa opzet. Ik kan hierdoor meer focus leggen op andere process van data science. Omdat er ook 2 team leden waren die nog geen ervaring hadden met programmeren, gaf ik aan dat ik graag hun wil helpen als er hulp nodig zou zijn. 
+
+<b>Taak</b><br />
+Ik na binnen het team de taak op als scum master. Als scrum master zorgde ik ervoor dat het scum proces soepel verloopt. Zo begeleide ik de daily standup's, sprint refinments, sprint planning en sprint retrospectives. Verder probeerde ik ervoor te zorgen dat iedereen in het team wist welke user stories hij moest uitvoeren en iedereen gemotiveerd te houden. Naast het de taak als scrum master was ik ook een data scientist. Deze rol nam met zich mee dat ik ML modellen of neural networks kan opzetten en verbeteren zodat we verschillende emoties kunnen classificeren. Verder moet dan de resultaten die uit de modellen komen geevalueerd worden. 
+
+<b>Actie</b><br />
+Door user stories te prioriseren kan er een overzicht van het project gemaakt worden. Hiermee weet het hele team wat hun te wachten staat. Verder stelde ik bij iedere meeting of er vragen waren of als iemand nog iets wou bespreken. <br />
+Als data scientist moet ik de datacamp cursussen en lectures volgen. Die pas ik dan toe op mijn eigen modelen. Verder heb ik gebruik gemaakt van websites zoals StackOverflow en TowardsDatascience om verder te kunnen komen bij problemen.
+
+<b>Resultaat</b><br />
+Aan het begin van het project had iedereen behoefte aan een abstracte project overzicht. Hierom had ik samen met het team de huidige, afgesloten en toekomstige userstories er bij gehaald en deze in timeline overzicht gezet in Miro die hiervoor al is besproken. Door het maken van dit project overzicht had iedereen een goed beeld van onze huidige voortgang en welke werkzaamheden hierna uitgevoerd kunnen worden. Dit overzicht werdt bij iedere sprint planning erbij gehaald om deze bij te werken.<br />
+Verder heb ik ML modellen kunnen opzetten en een neural network kunnen configueren. Hiervan heb ik de resultaten in kaart kunnen brengen doormidelen van Tensorboard of een confusion matrix.
+
+<b>Reflectie</b><br />
+Ik ben tevreden op de manier dat ik de scrum master rol heb kunnen voldoen voor dit project. Het team was transparant en de communicatie tussen elkaar was altijd op orde. Hierdoor kon het hele team efficient te werk gaan. Verder was het mij gelukt om een MLP model voor het project op te zetten. Nadat het team zag dat er een model was dat goede resultaten kon behalen werd iedereen meer gemotiveerd. Ook ben ik blij dat ik team leden heb kunnen ondersteunen bij het opzetten van ML modellen en het evalueren van onze CNN.
+
 </details>
 <details>
 <summary>Groeps evaluatie</summary>

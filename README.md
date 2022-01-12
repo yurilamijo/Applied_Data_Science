@@ -184,8 +184,8 @@ In dit hoofdstuk worden de gevonden en gebruikten terminologies, jargon en defin
 * Threshold -
 * Transfer Learning -
 * Waveform -
-* Quality of Life
-* Zero-crossing rate -
+* Quality of Life - 
+* Zero-crossing rate - 
 
 
 <br />
@@ -195,10 +195,15 @@ Voor het project heb ik een Multi Layer Perceptron (MLP) model van start tot ein
 <br /><br />
 
 ## Multi Layer Perceptron (MLP)
+source: [towardsdatascience](https://towardsdatascience.com/building-a-speech-emotion-recognizer-using-python-4c1c7c89d713)
+
+
 
 [MLP model notebook]()
 
 ### Data Preprocessing
+De data preprocessing pipeline werdt door de SVM, MLP, KNN en Logistic Regression modellen gebruikt. 
+
 <details>
 <summary>Data exploration</summary>
 Ik heb voor het model geen taken uitgevoerd dat betrekking had op data exploration. Deze taken waren uitgevoerd door Jaap. Hij had voor de data exploration visualisaties gemaakt van de audio samples die vertaald werden naar waveforms, de balance van de verschillende emoties, de duratie van audio samples en de balance tussen man en vrouw audio samples.
@@ -207,16 +212,214 @@ Ik heb voor het model geen taken uitgevoerd dat betrekking had op data explorati
 </details>
 
 <details>
-<summary>Data cleansing</summary>
+<summary>Data cleaning</summary>
+Data cleaning taken heb ik niet uitgevoerd. Deze werdt gezamelijk uitgevoerd door Jaap en Breno. Deze taak hield om stiltes in audio fragmenten te verwijderen.
 
+---
+</details>
+
+<details>
+<summary>Data preparation</summary>
+De data preparation is voor het grooten deels door mij opgezet. De werkzaamheden die andere teamleden bij de data preparation hebben uitgevoerd werd vaak ook ondersteund door mij.<br />
+Voor de SVM, MLP, KNN en Logistic Regression modellen werden de RAVDESS en CREMA-D datasets gebruikt. De RAVDESS dataset bevatte 8 emoties: neutral, happy, sad, angry, calm, fearful, disgust en surprised. De CREMA-D dataste bevatte 6 emoties: neutral, happy, sad, angry, fearful en disgust. Om de resultaten te kunnen vergelijken is ervoor gekozen om de 2 extra emoties (surprised en calm) van de RAVDESS dataset niet te gebruiken.
+
+<br />
+
+Verschillende data preparation processen.
+* Originele data met 6 emoties 
+* Getrimde data met 6 emoties 
+* Geaugmenteerde data
+* Gegroupeerde data
+* Geslacht gesplite data
+
+<br />
+<b>Feature extraction</b><br />
+Voor feature extraction is er gebruik gemaakt van de Mel-Frequency Cepstral Coefficients (MFCC's), Zero-crossing rate (ZCR) en chromagram. 
+
+
+Om deze data bruikbaar te maken voor de MLP model maar ook voor de andere ML models. 
+
+Volgend de tutorial die ik heb gevolgd word de _mean_ berekend van de MFCC's, ZCR en chromagram. Deze data wordt dan in een numpy hstack gezet zodat deze data dan gebruikt kan worden om de model te trainen
+
+```python
+def extract_feature(audio, sr, emotion, mfcc=True, chroma=True, mel=True):
+    result = np.array([])
+    
+    if mfcc:
+        # Gets the mean of the MFCC
+        # Change to 21 bins instead of 40
+        mfccs = np.mean(lb.feature.mfcc(y=audio, sr=sr, n_mfcc=40).T, axis=0)
+        result = np.hstack((result, mfccs))
+    if chroma:
+        # Gets the mean of the chromagram
+        stft = np.abs(lb.stft(audio))
+        chroma = np.mean(lb.feature.chroma_stft(S=stft, sr=sr).T, axis=0)
+        result = np.hstack((result, chroma))
+    if mel:
+        # Gets the mean of the Mel-frequency spectrogram
+        mel = np.mean(lb.feature.melspectrogram(audio, sr=sr).T, axis=0)
+        result = np.hstack((result, mel))
+    
+    return (result.tolist(), emotion)
+```
+
+
+<b>Audio augmentatie</b><br />
+Voor data verijking is er data augmentatie uitgevoerd. Deze taak heb ik gezamelijk uitgevoerd met Koen en Zahir. De verschillende data augmentaties zijn in individueel en in iedere combinatie gebruikt en getest. De resultaten hiervan zitten in dit [excel bestand](""). Uit de resultaten is gebleken dat het augmenteren van een klein tot middelmatig negatief effect had op de accuracy van het model. 
+
+De volgende data augmentaties zijn toegepast: 
+* Change pitch (up and down)
+* Change speed (slow and fast)
+* Change speed (slow and fast) and pitch (up and down)
+* HPSS
+* Value augmentation*
+* Added distribution noise*
+
+*Deze data augmentaties heb ik uitgewerkt en getest
+
+```python
+def augment_audio(row, is_augmented: bool = False):
+    audio, sr = lb.load(row["file"], sr=22050)
+
+    extracted_features = []
+    augmented_audios = [audio]
+    
+    if is_augmented:
+        # Change pitch down
+        augmented_audios.append(Augmenter.change_pitch(audio=audio, sr=sr))
+
+        # Change pitch up
+        augmented_audios.append(Augmenter.change_pitch(audio=audio, sr=sr, pitch_type="up"))
+
+        # Change speed slow
+        augmented_audios.append(Augmenter.change_speed(audio=audio))
+        
+        # Change speed fast
+        augmented_audios.append(Augmenter.change_speed(audio=audio, speed_change="high"))
+
+        # Change speed & pitch down
+        augmented_audios.append(Augmenter.change_speed_and_pitch(audio=audio, sr=sr))  
+
+        # Change speed & pitch up
+        augmented_audios.append(Augmenter.change_speed_and_pitch(audio=audio, sr=sr, pitch_type="up"))  
+
+        # Add distribution noise
+        augmented_audios.append(Augmenter.add_distribution_noise(audio=audio))
+        
+
+    for a in augmented_audios:
+        extracted_features.append(extract_feature(a, sr, row["emotion"]))
+        
+    return extracted_features
+```
+
+<br />
+
+<b>Positive, Negative en Neutral groepering</b> <br />
+Naast het classificeren van specifieke emoties, zijn er ook modelen getrained op basis van positive negatieve en neutrale emoties. Hierbij wouden we vergelijken of het groeperen van emoties vergelijkbare of zelfs betere resultaten zou behalen inplaats van het individueel classificeren van emoties. Deze taak werdt aan het begin door Zahir uitgevoerd. Nadat Zahir om ondersteuning vroeg sloot ik aan om hem te helpen bij het coderen. De code voor de die in de onderstaande code blok staat is geschreven door Zahir met ondersteuning van mij.
+
+```python
+def load_data_in_pos_neg(path, dataset_name:str):
+    data = []
+    # https://www.paulekman.com/universal-emotions/what-is-surprise/
+    positive = ["neutral", "happy", "calm", "suprised"]
+    negative = ["sad", "angry", "fearful", "disgust", "suprised"]
+    
+    for i, file in enumerate(glob.glob(path)):
+        file_path = os.path.basename(file)
+
+        emotion = ''
+        if dataset_name == "ravdess":
+            emotion = RAVDESS_emotion_labels[file_path.split("-")[2]]
+            #emotion = RAVDESS_emotion_labels[file_path.split("-")[3]] #turn on for trimmed data
+        else:
+            emotion = CREMA_D_emotion_labels[file_path.split("_")[2]]
+            
+        if emotion not in focused_emotion_labels:
+            continue
+            
+        if emotion in positive:
+            label = "positive"
+        else:
+            label = "negative"
+
+        data.append([file, label])
+           
+    end_time = time.perf_counter()
+   
+    return pd.DataFrame(data, columns=["file", "emotion"])
+```
+
+<br />
+
+<b>Audio splitted by male en female</b><br />
+Deze taak van preprocessing is gezamelijk uitgevoerd door Koen en Breno. Bij werdt er gekeken of de resultaten tussen audio van mannen en vrouwen werkelijk van elkaar verschillen zoals de paper *Speech Emotion Detection using IoT based Deep Learning for Health Care* verklaarde. De dataset werd op originele dataset (per emotie) en met de groepeerde (positive negatieve en neutrale) dataset gesplits op geslacht
+
+```python
+def load_sex_splitted_files(path:str, dataset_name:str):
+    """
+        Splits the male and female data into seperat datasets
+    """
+    female_data = []    
+    male_data = []
+
+    for i, file in enumerate(glob.glob(path)):
+        file_path = os.path.basename(file)
+        
+        if dataset_name == "ravdess":
+            # Splits RAVDESS sex samples
+            parts = file_path.replace('.','-').split("-")
+            emotion = RAVDESS_emotion_labels[parts[2]]
+            #emotion = RAVDESS_emotion_labels[parts[3]] #turn on for trimmed data
+            
+            if emotion not in focused_emotion_labels:
+                continue
+            
+            #if int(parts[7])%2 == 0: #turn on for trimmed data
+            if int(parts[6])%2 == 0:  #turn on for normal data
+                # Female sample
+                female_data.append([file, emotion])
+            else:
+                # Male sample
+                male_data.append([file, emotion])
+        else:
+            # Splits CREMA-D sex samples
+            parts = file_path.replace('.','_').split("_")
+            emotion = CREMA_D_emotion_labels[parts[2]]
+            
+            if emotion not in focused_emotion_labels:
+                continue
+            
+            #f int(parts[0].split('-')[1]) in CREMA_D_female_samples: # turn on for trimmed data
+            if int(parts[0]) in CREMA_D_female_samples:
+                # Female sample
+                female_data.append([file, emotion])
+            else:
+                # Male sample
+                male_data.append([file, emotion])
+            
+            
+    female_df = pd.DataFrame(female_data, columns=["file", "emotion"])
+    male_df = pd.DataFrame(male_data, columns=["file", "emotion"])
+        
+    return female_df, male_df
+```
+
+[Notebook audio preprocessing]()
+
+---
 </details>
 
 <details>
 <summary>Data explanation</summary>
+
+---
 </details>
 
 <details>
 <summary>Data visualization (exploratory)</summary>
+Confusion Matrix
+---
 </details>
 
 <br />
@@ -225,7 +428,6 @@ Ik heb voor het model geen taken uitgevoerd dat betrekking had op data explorati
 
 <details>
 <summary>Selecting a Model</summary>
-source: https://towardsdatascience.com/building-a-speech-emotion-recognizer-using-python-4c1c7c89d713
 
 </details>
 
@@ -248,19 +450,7 @@ source: https://towardsdatascience.com/building-a-speech-emotion-recognizer-usin
 ## Convolutional Neural Network (CNN)
 ### Data Preprocessing
 <details>
-<summary>Data exploration</summary>
-</details>
-
-<details>
-<summary>Data cleansing</summary>
-</details>
-
-<details>
-<summary>Data explanation</summary>
-</details>
-
-<details>
-<summary>Data visualization (exploratory)</summary>
+<summary>Data preparation</summary>
 </details>
 
 <br />

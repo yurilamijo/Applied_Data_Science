@@ -44,10 +44,9 @@ _Figuur 1 - Miro timeline planning_
 </details>
 <details>
 <summary>Github - SCRUM</summary>
-As a group we decided to use the project board of Girhub as our SCRUM board. The User Stories and Epics where applied through the creation of issues. The SCRUM board was divided into 4 sections: <b>To do</b>, <b>In progress</b>, <b>Waiting for feedback</b> and <b>Done</b>
+Als groep besloten we om het project board van Github te gebruiken als ons SCRUM board. De User Stories en Epics werden toegepast door middel van het aanmaken van issues. Het SCRUM board werd verdeeld in 4 secties: <b>To do</b>, <b>In progress</b>, <b>Waiting for feedback</b> and <b>Done</b>
 
-I was responsible for the creation of the user stories.At the end of each sprint we held a sprint planning. In this planning we looked at our Miror board and disscused which task should be executed. 
-
+Ik was verantwoordelijk voor het opstellen van de user stories. Aan het einde van elke sprint hielden we een sprint planning. In deze planning keken we naar ons Miro bord en bepaalden we welke taak uitgevoerd moest worden. 
 ![Sprint 8 backlog](https://gcdn.pbrd.co/images/zaFEIkf5La2M.png?o=1)
 _Figuur 2 - Sprint 8 backlog_
 
@@ -413,13 +412,31 @@ def load_sex_splitted_files(path:str, dataset_name:str):
 <details>
 <summary>Data explanation</summary>
 
+<b>CREMA-D</b><br />
+De Crowd-sourced Emotional Multimodal Actors Dataset ([CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D)) dataset bestaat uit 7442 audio fragmenten die ingesproken zijn door 91 acteurs. Hiervan zijn er 48 man en 43 vrouw tussen 20 en 74 jaar oud die van verschillende etniciteiten (Afro-Amerikaans, Aziatisch, Kaukasisch, Spaans, en Niet Gespecificeerd) komen. De dataset bevat 12 zinnen die gesproken zijn in 6 verschillende emoties. Deze emoties zijn: Anger, Disgust, Fear, Happy Neutral en Sad.
+
+
+<b>RAVDESS</b><br />
+De Ryerson Audio-Visual Database of Emotional Speech and Song ([RAVDESS](https://zenodo.org/record/1188976)) bestaat uit 7356 spraak en video fragmenten. Wij maken voor dit priject alleen gebruik van de 1440 spraak fragmenten. De samples zijn gesproken door 12 mannelijke stemacteuren en 12 vrouwelijke stemactrices. De dataset bevat 2 zinnen die gesproken zijn in 8 verschillende emoties. De emoties zijn: Anger, Disgust, Fear, Happy, Neutral, Sad, Calm en Suprise.
+
+
+<b>SAVEE</b><br />
+Surrey Audio-Visual Expressed Emotion ([SAVEE](https://www.kaggle.com/barelydedicated/savee-database)) is een dataset van 480 audio samples. De samples zijn gesproken door 4 mannelijke stemacteuren. De dataset bevat 15 zinnen die gesproken zijn in 7 emoties. De emoties zijn: Anger, Disgust, Fear, Happy , Sad, Calm en Suprise.
+
+
+<b>TESS</b><br />
+Toronto emotional speech set ([TESS](https://www.kaggle.com/ejlok1/toronto-emotional-speech-set-tess)) is een dataset van 2800 audio samples. De samples zijn gesproken door 2 vrouwelijke stemactrices. De dataset bevat 200 zinnen die gesproken zijn in 7 emoties. De emoties zijn: Anger, Disgust, Fear, Happy ,Neutral Sad, en Suprise.
+
 ---
+
 </details>
 
 <details>
 <summary>Data visualization (exploratory)</summary>
-Confusion Matrix
+Gedurende project ben ik niet bezig geweest met het visualiseren van de datasets.
+
 ---
+
 </details>
 
 <br />
@@ -442,45 +459,43 @@ Confusion Matrix
 <details>
 <summary>Visualizing the outcome of a model</summary>
 </details>
-
-<br />
-
----
-
-## Convolutional Neural Network (CNN)
-### Data Preprocessing
-<details>
-<summary>Data preparation</summary>
-</details>
-
-<br />
-
-### Predictive Analysis
-
-<details>
-<summary>Selecting a Model</summary>
-source: https://towardsdatascience.com/building-a-speech-emotion-recognizer-using-python-4c1c7c89d713
-
-</details>
-
-<details>
-<summary>Configuring a Model</summary>
-</details>
-
-<details>
-<summary>Evaluating a Model</summary>
-</details>
-
-<details>
-<summary>Visualizing the outcome of a model</summary>
-</details>
-
 
 <br />
 
 # Reflection and Evaluation
 <details>
 <summary>Persoonlijke leerdoelen evaluatie</summary>
+
+<b>Situatie</b><br />
+De Smart Teddy Project was het eerste project dat betrekking had op data science. Het project bestond uit 6 project leden. Hiervan kwam er een project lid kwam van bestuurskunden, een van bedrijfskunden en 4 software engineering. Als Software Engineering student was ik erg enthousiast over de minor. Ik had voor de minor al veel gelezen de resultaten en potentie van data science. Alleen wist ik niet waar ik zou moeten beginnen met het leren van het vakgebied. Hierom had ik ervoor gekozen om de minor Apllied Data Science te volgen. Zodat ik opzet en het proces van data science zou kunnen begrijpen en om deze in de praktijk te beoefenen. 
+
+<b>Taak</b><br />
+Voor de minor had ik een aantal leerdoelen voor mezelf opgesteld die ik aan het eind van de minor wilde beheersen. De leerdoelen die ik voor mezelf opgesteld had zijn de volgende:
+
+* Ik wilde leren welke vormen van machine learning models en neural networks er zijn.
+* Ik wilde leren hoe ik een machine learning model en/of een neural network train.
+* Ik wilde leren hoe ik data van een getrainde machine learning model kan visualiseren.
+* Ik wilde leren hoe het proces van data science van begin tot eind inelkaar zit.
+
+<b>Actie</b><br />
+Om de opgestelde leerdoelen te behalen heb ik de volgende acties ondernomen:
+
+Om te leren welke vormen van ML models en neural networks er zijn heb wou ik de Datacamp cursussen voltooien en de lectures van de minor volgen. Verder wilde ik met de opgenomen kennis meer onderzoek doen over de modelen en mogelijke nieuwe modellen die niet in de lectures voor komen.
+
+Om te leren hoe ik een machine learning model en/of een neural network kan trainen. Wilde ik de Datacamp cursussen voltooien en de lectures van de minor bij wonen. Hierna wilde ik zelf proberen om de resultaten van de cursussen en lectures na te bootsen.
+
+Om te leren hoe ik data van getrainde models kan visualiseren wilde ik de lecture van Tony Andioli over data visualizatie bijwonen. De kennis die ik bij deze lecture dan heb opgenomen wilde ik kan toepassen op het project.
+
+<b>Resultaat</b><br />
+Tijdens de minor heb ik me best gedaan om mijn opgestelde leerdoel te behalen.
+
+Tijdens de minor heb ik kennis opgedaan over welke vormen van ML models en neural networks er zijn. Deze kennis heb ik opgedaan door het volgen van de Datacamp cursussen en de lectures van de minor. Verder heb ik meerder ML models kunnen trainen in Datacamp en eigen test project. Zo heb ik een SVM  model gemaakt in Datacamp en een MLP model voor het project. De resultaten die daaruit kwamen heb ik daarna kunnen visualiseren.
+
+Door het bijwonen van de lectures en het voltooien van de Datacamp cursussen heb ik kunnen zien het proces van data science in elkaar zit en waarom het proces zo is.
+
+<b>Reflectie</b><br />
+Ik ben tevreden met resultaten die ik heb kunnen behalen. Ik heb de leerdoelen die ik voor mezelf had opgestelt kunnen behalen en dat geeft mij voldoening dat. Voordat ik aan de minor begon wist ik alleen wat data science was en wat je er mee kan. Nu kan ik door de minor zelf machine learning models of neural networks opgezetten en evalueren. Maar ik heb zeker tijdens de minor ook fouten gemaakt die ik wil verbeteren bij mijn eigen projecten. Na de minor zal ik zeker nog verder gaan met het verbeteren van mijn eigen proces bij het toepassen van data science. Ik weet nu op welke punten ik kritisch moet kijken om betrouwbare resultaten te kunnen bereiken.
+
 </details>
 <details>
 <summary>Persoonlijke project bijdragen evaluatie</summary>
@@ -495,7 +510,5 @@ source: https://towardsdatascience.com/building-a-speech-emotion-recognizer-usin
 Tijdens de minor heb ik de DataCamp cursussen die aangeboden werden gevolgd. Persoonlijk vond ik deze cursussen zeer leerzaam op het gebied van Data Science. Ik hiervoor geen idee hoe Data Science praktisch inelkaar zat en deze cursussen gaven hier een aardig goed beeld. Onderin in dit hoofdstuk heb ik een afebeelding toegevoegd met daarin de DataCamp cursussen die ik heb afgerond.
 
 ![Uitgevoerde DataCamp cursussen](https://gcdn.pbrd.co/images/E7pkfRINI68j.png?o=1)
+
 _Figuur 4 - Uitgevoerde DataCamp cursussen_
-
-
-<br /><br />

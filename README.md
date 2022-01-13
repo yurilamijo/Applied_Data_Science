@@ -107,9 +107,9 @@ Presentaties heb ik zelf niet individuele uitgevoerd. Deze werden altijd in team
 
 The presentations with the product owner were held by Breno
 * Internal presentations were I take part of
-    * [Internal Presentation -]()
-    * [Internal Presentation -]()
-    * [Internal Presentation -]()
+    * [Internal Presentation 4]()
+    * [Internal Presentation 8]()
+    * [Internal Presentation 10]()
 * External presentations were I take part of
     * [External Presentation 1]()
     * [External Presentation 3]()
@@ -118,9 +118,6 @@ The presentations with the product owner were held by Breno
 
 # Research Paper
 Als team hadden we besloten dat iedereen aan de research paper kon gaan werken.
-
-Voor de research paper is gebruik gemaakt van de [{...} template](). Die gebruik maakt van de IEEE standaard.
-
 Het initieel opzet van de research paper werdt gedaan door Breno, Zahir en ik. Wij begonnen eerst met het opzetten van het structuur van de paper. Daarna begonnen we eerst met de Introduction en Background hoofstukken. Nadat alle expirimenten van de CNN uitgevoerd waren en er definitieve resultaten waren sloten Jaap, Koen en Julian aan bij het schrijven van de paper.
 <br />
 Nadat alle hoodstukken gevuld en af waren, liepen we met ze alle gezamelijk alinea voor alinea na om de inhoud, spelling, grammatica en samenhang te controleren. Hierdoor kon iedereen zijn mening en feedback geven. Waardoor we naar mijn mening een redelijke research paper hebben kunnen opzetten.
@@ -158,15 +155,13 @@ Links: [IEEE](https://ieeexplore.ieee.org/abstract/document/9005638/authors#auth
 
 Deze research paper stelde een CNN als oplossing voor het classificeren van emoties. Voor het trainen van hun model maakten ze gebruik van de RAVDESS dataset. Verder beschreef deze paper duidelijk welke stappen er waren ondernomen en hoe iedere stap invloed had op de resultaten. Daarom adviseerde ik het team om ook deze paper door te nemen en het te gebruiken als baseline voor onze model en paper.
 
-<b>Data Augmentation</b>
+<b>Data Augmentation</b><br />
 Deze paper maakte gebruik van 3 vormen van data augmentatie. Deze waren: Time Stretching, Pitch Shifiting en Dynamic Range Compression. Na het uitvoeren van data augemntatie verbeterde zij de resultaten van de CNN
 
-<b>Results</b>
+<b>Results</b><br />
 Hun uiteindelijke model resulteerde in 95% voor mannen en 97% voor vrouwen. Zij hebben kunnen aantonen dat het mogelijk is om emoties te kunnen herkennen uit spraak audio met hoge accuractie.
 
-<b>Conclusion</b>
-
-
+<b>Conclusion</b><br />
 De researcher van de paper hebben hoge resultaten behaald, maar er kan echter niet gesproken worden van een model dat zulke resulatten zal krijgen bij realistisch auido.
 
 Het RAVDESS dataset wordt namelijk door profesionele acteuren en actresses in gesproken in een profesionele studio. Verder bestaat de ingesproken audio uit 2 verschillende zinnen. 
@@ -174,15 +169,7 @@ Het RAVDESS dataset wordt namelijk door profesionele acteuren en actresses in ge
 ---
 
 </details>
-<details>
-<summary>Audio feature extraction research
-</summary>
-
-[Source 1](https://medium.com/analytics-vidhya/understanding-the-mel-spectrogram-fca2afa2ce53),
-[Source 2](https://towardsdatascience.com/how-i-understood-what-features-to-consider-while-training-audio-files-eedfb6e9002b)
-
-</details>
-<br /><br />
+<br />
 
 ## Explanation of Terminology, jargon and definitions
 In dit hoofdstuk worden de gevonden en gebruikten terminologies, jargon en definities van het project uitgelegd.
@@ -459,18 +446,106 @@ Gedurende project ben ik niet bezig geweest met het visualiseren van de datasets
 <details>
 <summary>Selecting a Model</summary>
 
+Ik heb voor het project een MLP model gemaakt met behulp van de sklearn bibliotheek. Ik heb ervoor gekozen om een MLP model op te zetten omdat ik een tutorial op towardsdatascience had gevonden die gebruik maakte van een MLP classifier voor het herkennen van emoties. Verder kwam ik ook een andere [paper](http://www.gjstx-e.cn/gallery/40-may2021.pdf) tegen die ook MLP model gebruikte voor emotie herkenning.
+
+---
+
 </details>
 
 <details>
 <summary>Configuring a Model</summary>
+Ik had voor de models die opgezet werden in sklearn een [basemodel]() model gemaakt die iedereen kon gebruiken als ze een model zouden maken. De basemodel bevatte de functionaliteit om verschillende dataset types te kunnen inladen. Zo hoefde we alleen de bestands locatie van de JSON bestand door te geven en deze werden dan ingeladen. Verder had ik ook een evaluatie methode geschreven die de recall, precision, accuracy, classification report en confusion matrix toonde. Hiermee probeerde ik te voorkomen dat andere projectleden geen code zouden schrijven voor dezelfde functionaliteiten. De MLP model maakte eerst gebruikt van deze basemodel. Later in het project was er een notebook gemaakt waarin alle models in een keer uitgevoerd konden worden. Deze werd door Jaap opgezet.
+
+---
+
+</details>
+
+<details>
+<summary>Training a Model</summary>
+Om de beste model te vinden kunnen met de met de juiste hyperparameters is er gebruikt gemaakt van GridSearchCV om de hyperparameters te optimaliseren.
+
+```python    
+    @classmethod
+    def grid_search(cls, dataset_name, is_augmented=False):
+        # train dataset
+        train_dataset = super().read_dataset(dataset_type='train', dataset_name=dataset_name)
+
+        X_train, y_train = [], []
+        
+        if is_augmented:
+            X_train = train_dataset['Augmented']['X']
+            y_train = train_dataset['Augmented']['y']
+        else:
+            X_train = train_dataset['OriginalData']['X']
+            y_train = train_dataset['OriginalData']['y']
+        
+        # GridSearchCV Train accuracy
+        param_grid = [
+            {
+                'activation' : ['logistic', 'tanh', 'relu'],
+                'solver' : ['sgd', 'adam'],
+                'hidden_layer_sizes': [
+                     (100,), (200,), (300,)
+                 ],
+                'alpha': [0.0001, 0.05],
+                'learning_rate': ['constant', 'adaptive'],
+#                 'max_iter': [10],
+            }
+        ]
+        
+        clf = GridSearchCV(model, param_grid, cv=5, scoring=scoring, n_jobs=5) 
+        
+        start_time = time.perf_counter()
+        clf.fit(X_train, y_train)
+        end_time = time.perf_counter()
+        
+        print(f"Duration fitting: {end_time - start_time:04f}")
+        
+        print("Best parameters set found on development set:")
+        print(clf.best_params_)
+        print(clf.best_estimator_)
+        print(clf.best_score_)
+        
+        return clf
+```
+
+In de onderstaande code block staan de resultaten die de model heeft kunnen bereiken bij het classificeren van positieve en negatieve emoties bij de CREMA-D dataset.
+```
+Best parameters set found on development set:
+{'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (200,), 'learning_rate': 'adaptive', 'max_iter': 10, 'solver': 'adam'}
+MLPClassifier(activation='tanh', hidden_layer_sizes=(200,),
+              learning_rate='adaptive', max_iter=10)
+
+Train accuracy is: 0.7275784753363229
+Test accuracy is: 0.6888440860215054
+
+Recall: [0.86712598 0.30508475]
+Precision: [0.72870141 0.51612903]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+    negative       0.73      0.87      0.79      1016
+    positive       0.52      0.31      0.38       472
+
+    accuracy                           0.69      1488
+   macro avg       0.62      0.59      0.59      1488
+weighted avg       0.66      0.69      0.66      1488
+```
+
 </details>
 
 <details>
 <summary>Evaluating a Model</summary>
+
+De MLP model was geëvalueerd met behulp van Kfold cross validation. Deze code was helaas later in de minor niet meer gebruikt. Dit kwam omdat de modellen niet met hun geoptimaliseerde hyperparameters individueel weer werd geëvalueerd met Cross validation. De code Kfold cross validation is te vinden in deze [notebook](). 
+De MLP model is geëvalueerd met de andere modellen die de projectleden hadden gemaakt. Bij deze evaluatie is er gekeken naar de resultaten bij het gebruikt van de RAVDESS en CREMA-D datasets. De TESS en SAVEE datasets zijn hier afwezig omdat deze oas later waren toegevoegd. Helaas was er geen tijd meer met de extra datasets nog een evaluatie uit te voeren voor deze modellen. De evaluatie resultaten is in deze excel bestand terug te vinden.
+
 </details>
 
 <details>
 <summary>Visualizing the outcome of a model</summary>
+De resultaten van de MLP model werden gevisualiseerd met behulp van de `model_accuracy` functie in de basemodel. Een van de visualisaties die de functie alleen miste is de de learning curve van de model. Dit zou het voor ons makkelijker kunnen maken om te kunnen zien of de model aan het underfitten of overfitten was.
 </details>
 
 <br />
@@ -555,7 +630,7 @@ Ik kan met plezier en een goed gevoel deze minor afsluiten. We hebben als team e
 <br />
 
 # Datacamp
-Tijdens de minor heb ik de DataCamp cursussen die aangeboden werden gevolgd. Persoonlijk vond ik deze cursussen zeer leerzaam op het gebied van Data Science. Ik hiervoor geen idee hoe Data Science praktisch inelkaar zat en deze cursussen gaven hier een aardig goed beeld. Onderin in dit hoofdstuk heb ik een afebeelding toegevoegd met daarin de DataCamp cursussen die ik heb afgerond.
+Tijdens de minor heb ik de DataCamp cursussen die aangeboden werden gevolgd. Persoonlijk vond ik deze cursussen zeer leerzaam op het gebied van Data Science. Ik had hiervoor geen idee hoe Data Science praktisch inelkaar zat en deze cursussen gaven hier een aardig goed beeld van. Onderin in dit hoofdstuk heb ik een afbeelding toegevoegd met daarin de DataCamp cursussen die ik heb afgerond.
 
 ![Uitgevoerde DataCamp cursussen](https://gcdn.pbrd.co/images/E7pkfRINI68j.png?o=1)
 

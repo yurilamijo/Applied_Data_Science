@@ -130,15 +130,20 @@ Nadat alle hoofdstukken gevuld en af waren, liepen we met ze alle gezamenlijk al
 
 
 Voor de research paper heb ik de volgende delen met feedback en samenwerking van het team geschreven:
-* Introductie
+* Introductie*
 * Methodology
     * Architecture
 * Results
-<br /><br />
+* Conclusion*
+
+*Niet gehele hoofdstuk alleen geschreven, maar stukken alinea's
+
+<br />
 
 # Domain knowledge
 Voordat er machine learning models en neural networks ontwikkeld konden worden moest er eerst kennis opgedaan worden over het domein. Hiervoor heb ik literatuur onderzoek naar relevante onderzoeken en projecten die emoties classificeren uit audio. Verder kregen we ook documenten van onze product owner, zodat we ons konden inlezen op het domein en het Smart Teddy Bear project.
-<br /><br />
+
+<br />
 
 ## Introduction of the subject field
 De Smart Teddy is een therapeutische partner die ouderen observeert door middel van sensoren in de Smart Teddy. De teddy bezit op het moment een aantal basis functionaliteiten zoals het observeren op het hoeveelheid aan plezier op een dag heeft en/of ouderen genoeg lang genoeg slapen. Deze informatie wordt dan in beeld gebracht in een dashboard voor verzorgers. Hiermee wordt er een schatting gemaakt over de Quality of Life van de ouder. Verzorgers kunnen met deze informatie sneller handelen en mogelijk de Quality of Life van een ouder verbeteren.
@@ -183,7 +188,7 @@ In dit hoofdstuk worden de gevonden en gebruikten terminologies, jargon en defin
 * Ambient noise - huishoudelijke achtergrond geluiden
 * CREMA-D - Een dataset met mannelijke en vrouwlijke audio fragmenten met de emoties: Anger, Disgust, Happy, Neutral, Sad en Suprise.
 * Chromagram - een typische 12-elementaire kenmerkvector die aangeeft hoeveel energie er is in elke toonhoogteklasse.
-* Convolutional Neural Network -
+* Convolutional Neural Network - Een vorm van neural networks. Wordt gebruikt voor beeldherkenning
 * Dementie -  is de naam voor een combinatie van symptomen (een syndroom), waarbij de hersenen informatie niet meer goed kunnen verwerken.
 * Emotie - is een innerlijke beleving of gemoedsbeweging.
 * K-nearest neighbor algorithm (KNN) - Een classificatie machine learning model.
@@ -206,9 +211,7 @@ Voor het project heb ik een Multi Layer Perceptron (MLP) model van start tot ein
 <br /><br />
 
 ## Multi Layer Perceptron (MLP)
-source: [towardsdatascience](https://towardsdatascience.com/building-a-speech-emotion-recognizer-using-python-4c1c7c89d713)
-
-[MLP model notebook](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/mlp/MLP.ipynb)
+Voor het maken van de MLP model heb ik gebruik gemaakt van deze bron: [towardsdatascience](https://towardsdatascience.com/building-a-speech-emotion-recognizer-using-python-4c1c7c89d713). Hiervan uit heb ik de MLP verder opgebouwd. De [MLP model notebook](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/mlp/MLP.ipynb) is hier te vinden.
 
 ### Data Preprocessing
 De data preprocessing pipeline werdt door de SVM, MLP, KNN en Logistic Regression modellen gebruikt. 
@@ -542,6 +545,8 @@ Classification Report:
 weighted avg       0.66      0.69      0.66      1488
 ```
 
+---
+
 </details>
 
 <details>
@@ -550,14 +555,19 @@ weighted avg       0.66      0.69      0.66      1488
 De MLP model was geëvalueerd met behulp van Kfold cross validation. Deze code was helaas later in de minor niet meer gebruikt. Dit kwam omdat de modellen niet met hun geoptimaliseerde hyperparameters individueel weer werd geëvalueerd met Cross validation. De code Kfold cross validation is te vinden in deze [notebook](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/mlp/Old%20MLP.ipynb). 
 De MLP model is geëvalueerd met de andere modellen die de projectleden hadden gemaakt. Bij deze evaluatie is er gekeken naar de resultaten bij het gebruikt van de RAVDESS en CREMA-D datasets. De TESS en SAVEE datasets zijn hier afwezig omdat deze pas later waren toegevoegd. Helaas was er geen tijd meer met de extra datasets nog een evaluatie uit te voeren voor deze modellen. De evaluatie resultaten is in deze [Excel](https://github.com/yurilamijo/Applied_Data_Science/blob/main/excel/Evaluation%20precision%2024-11-2021.xlsx) bestand terug te vinden.
 
-![Confusion matrix](https://raw.githubusercontent.com/yurilamijo/Applied_Data_Science/main/afbeeldingen/confusion_matrix_mlp_PN.jpg)
+![Confusion matrix](https://raw.githubusercontent.com/yurilamijo/Applied_Data_Science/main/afbeeldingen/confusion_matrix_mlp_PN.jpg)<br />
 _Figuur 7 - Confusion matrix van positive en negative classificatie_
+
+---
 
 </details>
 
 <details>
 <summary>Visualizing the outcome of a model</summary>
 De resultaten van de MLP model werden gevisualiseerd met behulp van de `model_accuracy` functie in de basemodel. Een van de visualisaties die de functie alleen miste is de learning curve van de model. Dit zou het voor ons makkelijker kunnen maken om te kunnen zien of de model aan het underfitten of overfitten was.
+
+---
+
 </details>
 
 <br />

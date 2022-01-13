@@ -648,7 +648,7 @@ _Figuur 4 - Uitgevoerde DataCamp cursussen_
 <br />
 
 # Notebooks
-Onderaan staan alle notebooks waarin ik heb gewerkt.
+Onderaan staan alle notebooks waarin ik heb gewerkt. Verder had ik ook notebooks die gemaakt die geen betrekking had op het project. Deze notebooks zijn te vinden in deze [Github repository](https://github.com/yurilamijo/NeuralNetworks). 
 
 Notebooks die betrokken zijn bij de machine learning models:<br />
 [Augementer class](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/augmenter.ipynb)

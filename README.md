@@ -49,6 +49,12 @@ Ik was verantwoordelijk voor het opstellen van de user stories. Aan het einde va
 ![Sprint 8 backlog](https://gcdn.pbrd.co/images/zaFEIkf5La2M.png?o=1)
 _Figuur 2 - Sprint 8 backlog_
 
+![Uitgevoerde user stories 1](https://github.com/yurilamijo/Applied_Data_Science/blob/main/afbeeldingen/user_stories-1.png)
+
+![Uitgevoerde user stories 2](https://github.com/yurilamijo/Applied_Data_Science/blob/main/afbeeldingen/user_stories-2.png)
+
+![Uitgevoerde user stories 3](https://github.com/yurilamijo/Applied_Data_Science/blob/main/afbeeldingen/user_stories-3.png)
+
 ---
 </details>
 <details><summary>Daily stand-up/ Retrospective</summary>
@@ -74,7 +80,7 @@ Een van de belangrijkste toekomstige aanpasingen die toegepast moet worden is he
 <br />
 
 ## Conclusion
-Om onze hoofdvraag te kunnen beantwoorden is er gebriuik gemaakt van een gecombineerde dataset dat bestaat uit vier datasets. Deze datasets zijn: RAVDESS, CREMA-D, SAVEE en TESS. Voor de machine learning modellen is er gebruik gemaakt van KNN, SVM en Logistic Regression. Deze resultaten zijn in dit [excel]() te vinden. Bij deze resultaten is ook het MLP model opgenomen. Omdat de resultaten van deze models matig waren, hadden wij besloten om onze focus te leggen op oplossing die gebruik maakt van een CNN. Dit was omdat wij tijdens de literatuur onderzoek een goeie paper hadden gevonden die gebruikt maakte van een CNN die veelbelovende resultaten aantoonde. Omdat wij in het midden van de minor overgestapt waren van ML models naar een CNN hadden we niet alle optimalisaties kunnen toepassen op de CNN die we wel op de ML models hadden toegepast en dat is jammer. Er is daarom voor de CNN zeker nog ruimte voor verbetering. De CNN die opgezet is kan de emoties angry, sad, neutral en happy met huisomgevingsgeluiden herkenen met een precisie van 80% en zonder huisomgevingsgeluiden 84%. Dit zijn geen slechte precentages, maar zoals ik eerder had benoemd kan de CNN nog verbeterd worden dat kan leiden to betere resultaten
+Om onze hoofdvraag te kunnen beantwoorden is er gebriuik gemaakt van een gecombineerde dataset dat bestaat uit vier datasets. Deze datasets zijn: RAVDESS, CREMA-D, SAVEE en TESS. Voor de machine learning modellen is er gebruik gemaakt van KNN, SVM en Logistic Regression. Deze resultaten zijn in dit [excel](https://github.com/yurilamijo/Applied_Data_Science/blob/main/excel/Evaluation%20precision%2024-11-2021.xlsx) te vinden. Bij deze resultaten is ook het MLP model opgenomen. Omdat de resultaten van deze models matig waren, hadden wij besloten om onze focus te leggen op oplossing die gebruik maakt van een CNN. Dit was omdat wij tijdens de literatuur onderzoek een goeie paper hadden gevonden die gebruikt maakte van een CNN die veelbelovende resultaten aantoonde. Omdat wij in het midden van de minor overgestapt waren van ML models naar een CNN hadden we niet alle optimalisaties kunnen toepassen op de CNN die we wel op de ML models hadden toegepast en dat is jammer. Er is daarom voor de CNN zeker nog ruimte voor verbetering. De CNN die opgezet is kan de emoties angry, sad, neutral en happy met huisomgevingsgeluiden herkenen met een precisie van 80% en zonder huisomgevingsgeluiden 84%. Dit zijn geen slechte precentages, maar zoals ik eerder had benoemd kan de CNN nog verbeterd worden dat kan leiden to betere resultaten
 
 <br />
 
@@ -107,12 +113,12 @@ Presentaties heb ik zelf niet individuele uitgevoerd. Deze werden altijd in team
 
 The presentations with the product owner were held by Breno
 * Internal presentations were I take part of
-    * [Internal Presentation 4]()
-    * [Internal Presentation 8]()
-    * [Internal Presentation 10]()
+    * [Internal Presentation 4](https://github.com/yurilamijo/Applied_Data_Science/blob/main/presentaties/Interne%20presentatie%20week%204.pdf)
+    * [Internal Presentation 8](https://github.com/yurilamijo/Applied_Data_Science/blob/main/presentaties/Interne%20presentatie%20week%208.pdf)
+    * [Internal Presentation 10](https://github.com/yurilamijo/Applied_Data_Science/blob/main/presentaties/Interne%20presentatie%20week%2010.pdf)
 * External presentations were I take part of
-    * [External Presentation 1]()
-    * [External Presentation 3]()
+    * [External Presentation 1](https://github.com/yurilamijo/Applied_Data_Science/blob/main/presentaties/External%20Presentation%201%20-%20team%20emo.pptx.pdf)
+    * [External Presentation 3](https://github.com/yurilamijo/Applied_Data_Science/blob/main/presentaties/External%20Presentation%203.pdf)
 
 <br /><br />
 

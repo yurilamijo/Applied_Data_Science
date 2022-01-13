@@ -22,14 +22,13 @@ Vanuit deze hoofdvraag zijn de volgende sub onderzoekvragen opgesteld.
 
 > Can the known methods of classifying be reproduced with the same precision/recall on the available dataset?
 
-<br/><br/>
+<br/>
 
-# Planning
+## Planning
 Het project team was bij de kick off van de minor geadviseerd om de werkzaamheden uit te voeren en te planning in de Agile techniek. Hierom hebben wij unaniem gekozen om SCRUM toe te passen. Vier van de project leden waaronder ik waren al bekend SCUM. Waardoor wij de andere 2 project leden konden ondersteunen met het SCRUM process. Verder had het team besloten om een vaste SCRUM master rol toe tewijzen. Deze rol had ik vervuld.
 
 Sprints tot sprint 3 duurde een week. Dit liep echter niet zoals verwacht. De user stories die uitgevoerd werden, moesten vaak mee genomen worden omdat deze nog niet af was of omdat deze net te groot was. Hierom hadden wij er voor gekozen om sprints te houden van 2 weken. Aan het eind van iedere sprint werd er met het team een retrospective gehouden die daarna gevolgd werd door een sprint planning voor de volgende sprint.
-<br/><br/>
-
+<br/>
 
 <details>
 <summary>Project plan - Miro</summary>
@@ -63,7 +62,21 @@ Voor iedere retrospective is er een afbeelding geexpoteerd, zodat alle geschreve
 
 ---
 </details>
-<br /><br />
+<br />
+
+## Evaluation
+We hebben een CNN kunnen opleveren die angry, sad, happy en neural emoties kunnen herkennen. Maar voor dit model is er zeker nog ruimte voor verbetering. Een van de eerste verbetering die toegepast kan worden is het optimaliseren van de hyperparameters. Dit hebben wij voor de CNN helaas niet kunnen uitvoeren wegen het gebrek van tijd. De tweede verbetering die toegepast kan worden is door over-sampling toe te passen op de neutrale audio fragmenten hier door verhogen we de precision voor neutral samples. Als gevolg hiervan is dat de model nu alleen met meer zekerheid kan zeggen dat het een bepaalde emotie is. Verder kan er gekeken worden om meerdere datasets toe te voegen aan de huidige dataset. De datasets die toegevoegd kunnen worden zijn: eNTERFACE, EMO-DB, DES en SUSAS.
+
+Naast deze verbeteringen kan er ook gekeken worden naar een mogelijke andere methodes voor het classificeren van emoties. Een van deze methodes is het groeperen van emoties in groepen van positive, negative en neutral. Dit kan handig zijn in situaties waarbij de eindgebruiker alleen wilt weten dat er een emotie aanwezig was en welke dit mogelijk kan zijn. Maar om deze methode te kunnen uitvoeren adviseren we wel om de groeperingen te bespreken met professionnels binnen het vakgebied van emoties.
+
+Een van de belangrijkste toekomstige aanpasingen die toegepast moet worden is het evalueren van het model met audio fragmenten van ouderen met dementie en het trainen van het model met deze data. Pas nadat deze stap is uitgevoerd weet de opdrachtgever zeker of het mogelijk is om accuraat emoties te kunnen herkennen bij ouderen met dementie.
+
+<br />
+
+## Conclusion
+Om onze hoofdvraag te kunnen beantwoorden is er gebriuik gemaakt van een gecombineerde dataset dat bestaat uit vier datasets. Deze datasets zijn: RAVDESS, CREMA-D, SAVEE en TESS. Voor de machine learning modellen is er gebruik gemaakt van KNN, SVM en Logistic Regression. Deze resultaten zijn in dit [excel]() te vinden. Bij deze resultaten is ook het MLP model opgenomen. Omdat de resultaten van deze models matig waren, hadden wij besloten om onze focus te leggen op oplossing die gebruik maakt van een CNN. Dit was omdat wij tijdens de literatuur onderzoek een goeie paper hadden gevonden die gebruikt maakte van een CNN die veelbelovende resultaten aantoonde. Omdat wij in het midden van de minor overgestapt waren van ML models naar een CNN hadden we niet alle optimalisaties kunnen toepassen op de CNN die we wel op de ML models hadden toegepast en dat is jammer. Er is daarom voor de CNN zeker nog ruimte voor verbetering. De CNN die opgezet is kan de emoties angry, sad, neutral en happy met huisomgevingsgeluiden herkenen met een precisie van 80% en zonder huisomgevingsgeluiden 84%. Dit zijn geen slechte precentages, maar zoals ik eerder had benoemd kan de CNN nog verbeterd worden dat kan leiden to betere resultaten
+
+<br />
 
 # Communication
 <details>

@@ -49,11 +49,14 @@ Ik was verantwoordelijk voor het opstellen van de user stories. Aan het einde va
 ![Sprint 8 backlog](https://gcdn.pbrd.co/images/zaFEIkf5La2M.png?o=1)
 _Figuur 2 - Sprint 8 backlog_
 
-![Uitgevoerde user stories 1](https://github.com/yurilamijo/Applied_Data_Science/blob/main/afbeeldingen/user_stories-1.png)
+![Uitgevoerde user stories 1](https://raw.githubusercontent.com/yurilamijo/Applied_Data_Science/main/afbeeldingen/user_stories-1.jpg)
+_Figuur 3 - User strories_
 
-![Uitgevoerde user stories 2](https://github.com/yurilamijo/Applied_Data_Science/blob/main/afbeeldingen/user_stories-2.png)
+![Uitgevoerde user stories 2](https://raw.githubusercontent.com/yurilamijo/Applied_Data_Science/main/afbeeldingen/user_stories-2.jpg)
+_Figuur 4 - User strories_
 
-![Uitgevoerde user stories 3](https://github.com/yurilamijo/Applied_Data_Science/blob/main/afbeeldingen/user_stories-3.png)
+![Uitgevoerde user stories 3](https://raw.githubusercontent.com/yurilamijo/Applied_Data_Science/main/afbeeldingen/user_stories-3.jpg)
+_Figuur 5 - User strories_
 
 ---
 </details>
@@ -144,7 +147,7 @@ Voordat er machine learning models en neural networks ontwikkeld konden worden m
 De Smart Teddy is een therapeutisch partner die ouderen observeert doormiddel van sensoren in de Smart Teddy. De teddy bezit op het moment een aantal basis functionaliteiten zoals het observeren op het hoeveelheid aan plezier op een dag heeft en of ouderen genoeg laang genoeg slapen. Deze infromatie wordt dan in beeld gebracht in een dashboard voor verzorgers. Hiermee wordt er een schatting gemaakt over de Quality of Life van de ouder. Verzorgers kunnen met deze informatie sneller handelen en mogelijk de Quality of Life van een ouder verbeteren.
 
 ![Smart Teddy dashboard](https://bigdata-thuas.eu/wp-content/uploads/2017/10/Screenshot-2021-04-10-at-23.32.41-300x161@2x.png)<br />
-_Figuur 2 - Smart Teddy dashboard_
+_Figuur 6 - Smart Teddy dashboard_
 
 <br />
 De product owner wilt voor de volgende prototype een aantal functionaliteiten toevoegen aan de teddy. Een van die functionaliteiten is het herkennen van emoties via spraak audio. Met behulp van deze functionaliteiten kan er in het dashboard aangegeven worden hoe vaak bepaalde emoties zijn geuit op een dag. Verzorgers die niet ter plekken zijn kunnen hierdoor een beeld de situatie krijgen zonder er fysiek bij te zijn. 
@@ -192,7 +195,6 @@ In dit hoofdstuk worden de gevonden en gebruikten terminologies, jargon en defin
 * Quality of Life - 
 * Zero-crossing rate - 
 
-
 <br />
 
 # Created models
@@ -202,9 +204,7 @@ Voor het project heb ik een Multi Layer Perceptron (MLP) model van start tot ein
 ## Multi Layer Perceptron (MLP)
 source: [towardsdatascience](https://towardsdatascience.com/building-a-speech-emotion-recognizer-using-python-4c1c7c89d713)
 
-
-
-[MLP model notebook]()
+[MLP model notebook](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/mlp/MLP.ipynb)
 
 ### Data Preprocessing
 De data preprocessing pipeline werdt door de SVM, MLP, KNN en Logistic Regression modellen gebruikt. 
@@ -270,7 +270,7 @@ def extract_feature(audio, sr, emotion, mfcc=True, chroma=True, mel=True):
 
 
 <b>Audio augmentatie</b><br />
-Voor data verijking is er data augmentatie uitgevoerd. Deze taak heb ik gezamelijk uitgevoerd met Koen en Zahir. De verschillende data augmentaties zijn in individueel en in iedere combinatie gebruikt en getest. De resultaten hiervan zitten in dit [excel bestand](""). Uit de resultaten is gebleken dat het augmenteren van een klein tot middelmatig negatief effect had op de accuracy van het model. 
+Voor data verijking is er data augmentatie uitgevoerd. Deze taak heb ik gezamelijk uitgevoerd met Koen en Zahir. De verschillende data augmentaties zijn in individueel en in iedere combinatie gebruikt en getest. De resultaten hiervan zitten in dit [excel](https://github.com/yurilamijo/Applied_Data_Science/blob/main/excel/Evaluation%20of%20Models%20-%203-11-2021.xlsx) bestand. Uit de resultaten is gebleken dat het augmenteren van een klein tot middelmatig negatief effect had op de accuracy van het model. 
 
 De volgende data augmentaties zijn toegepast: 
 * Change pitch (up and down)
@@ -544,8 +544,11 @@ weighted avg       0.66      0.69      0.66      1488
 <details>
 <summary>Evaluating a Model</summary>
 
-De MLP model was geëvalueerd met behulp van Kfold cross validation. Deze code was helaas later in de minor niet meer gebruikt. Dit kwam omdat de modellen niet met hun geoptimaliseerde hyperparameters individueel weer werd geëvalueerd met Cross validation. De code Kfold cross validation is te vinden in deze [notebook](). 
+De MLP model was geëvalueerd met behulp van Kfold cross validation. Deze code was helaas later in de minor niet meer gebruikt. Dit kwam omdat de modellen niet met hun geoptimaliseerde hyperparameters individueel weer werd geëvalueerd met Cross validation. De code Kfold cross validation is te vinden in deze [notebook](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/mlp/Old%20MLP.ipynb). 
 De MLP model is geëvalueerd met de andere modellen die de projectleden hadden gemaakt. Bij deze evaluatie is er gekeken naar de resultaten bij het gebruikt van de RAVDESS en CREMA-D datasets. De TESS en SAVEE datasets zijn hier afwezig omdat deze oas later waren toegevoegd. Helaas was er geen tijd meer met de extra datasets nog een evaluatie uit te voeren voor deze modellen. De evaluatie resultaten is in deze excel bestand terug te vinden.
+
+![Confusion matrix](https://raw.githubusercontent.com/yurilamijo/Applied_Data_Science/main/afbeeldingen/confusion_matrix_mlp_PN.jpg)
+_Figuur 7 - Confusion matrix van positive en negative classificatie_
 
 </details>
 
@@ -641,3 +644,31 @@ Tijdens de minor heb ik de DataCamp cursussen die aangeboden werden gevolgd. Per
 ![Uitgevoerde DataCamp cursussen](https://gcdn.pbrd.co/images/E7pkfRINI68j.png?o=1)
 
 _Figuur 4 - Uitgevoerde DataCamp cursussen_
+
+<br />
+
+# Notebooks
+Onderaan staan alle notebooks waarin ik heb gewerkt.
+
+Notebooks die betrokken zijn bij de machine learning models:<br />
+[Augementer class](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/augmenter.ipynb)
+
+[Base model](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/base_model.ipynb)
+
+[Old MLP](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/mlp/Old%20MLP.ipynb)
+
+[MLP](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/mlp/MLP.ipynb)
+
+[Universal audio preprocessing]()
+
+<br />
+
+Notebooks die betrokken zijn bij de CNN:<br/>
+[Dataset loader](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/dataset_loader.ipynb)
+
+[Processable](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/processable.ipynb)
+
+[CNN classificatie postive, negative en neutral](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/cnn/CNN_Postive_Negative_Neutral.ipynb)
+
+[CNN visualisatie](https://github.com/yurilamijo/Applied_Data_Science/blob/main/notebooks/cnn/CNN_Visualizatie.ipynb)
+
